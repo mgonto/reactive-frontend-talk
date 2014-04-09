@@ -50,7 +50,7 @@ pre[class*="language-"] {
 
 .long :not(pre) > code[class*="language-"], 
 .long pre[class*="language-"] {
-  width: 950px;
+  width: 960px;
 }
 
 .line-highlight {

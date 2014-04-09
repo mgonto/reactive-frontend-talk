@@ -167,6 +167,34 @@
       </section>
 
       <section>
+          <div class="content">
+            <h2>We used to have 100 servers</h2>
+            <h2>Now we have 1000 servers</h2>
+          </div>
+      </section>      
+
+      <section>
+          <div class="content">
+            <h2>We used to have GB of data</h2>
+            <h2>Now we have PB of data</h2>
+          </div>
+      </section>      
+
+      <section>
+          <div class="content">
+            <h2>We used to have 100s of users</h2>
+            <h2>Now we have 10000s of users</h2>
+          </div>
+      </section>      
+
+
+      <section>
+          <div class="content">
+            <h2>What are the main pilars of reactive?</h2>
+          </div>
+      </section>
+
+      <section>
         <div class="content">
           <h3>1. React To events</h3>
         </div>
@@ -180,15 +208,16 @@
 
       <section>
         <div class="content">
-          <h3>3. React To failure</h3>
+          <h3>3. React To users</h3>
         </div>
       </section>
 
       <section>
         <div class="content">
-          <h3>4. React To users</h3>
+          <h3>4. React To failure</h3>
         </div>
       </section>
+
 
       <section data-bespoke-state="really">
         <div class="content nofade">
@@ -405,6 +434,30 @@ $('.counter-btn').click(function(e) {
 
       <section class="white only-image">
         <div class="content">
+          <img class="full-width-img" src="img/stream-diagram-01.jpg">
+        </div>
+      </section>
+
+      <section class="white only-image">
+        <div class="content">
+          <img class="full-width-img" src="img/stream-diagram-02.jpg">
+        </div>
+      </section>
+
+      <section class="white only-image">
+        <div class="content">
+          <img class="full-width-img" src="img/stream-diagram-03.jpg">
+        </div>
+      </section>
+
+      <section class="white only-image">
+        <div class="content">
+          <img class="full-width-img" src="img/stream-diagram-04.jpg">
+        </div>
+      </section>
+
+      <section class="white only-image">
+        <div class="content">
           <img src="img/observable-diagram.jpg">
         </div>
       </section>
@@ -435,30 +488,6 @@ $('.counter-btn').click(function(e) {
         </div>
       </section> 
 
-      <section class="white only-image">
-        <div class="content">
-          <img class="full-width-img" src="img/stream-diagram-01.jpg">
-        </div>
-      </section>
-
-      <section class="white only-image">
-        <div class="content">
-          <img class="full-width-img" src="img/stream-diagram-02.jpg">
-        </div>
-      </section>
-
-      <section class="white only-image">
-        <div class="content">
-          <img class="full-width-img" src="img/stream-diagram-03.jpg">
-        </div>
-      </section>
-
-      <section class="white only-image">
-        <div class="content">
-          <img class="full-width-img" src="img/stream-diagram-04.jpg">
-        </div>
-      </section>
-
       <section data-bespoke-state="">
         <div class="content">
           <div class="byline">
@@ -470,6 +499,12 @@ $('.counter-btn').click(function(e) {
           </div>
           <h2>the observable</h2>
           <div class="unbrokenline"></div>
+        </div>
+      </section> 
+
+      <section>
+        <div class="content">
+          <h2>What are the advantages?</h2>
         </div>
       </section> 
 
@@ -735,7 +770,83 @@ angular.module('counter').controller('MainCtrl',
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
-          <pre data-line=""><code class="language-javascript">$scope.$createObservableFunction('search')
+          <pre data-line="1"><code class="language-javascript">$scope.$createObservableFunction('search')
+  .map(function() {
+      return $scope.name;
+  })
+  .flatMap(function(name) {
+      return rx.Observable.fromPromise(ApiServer.findByName(name));
+  })
+  .filter(function(contact) {
+      return !$scope.sex || ct.sex === $scope.sex;
+  })
+  .subscribe(function(people) {
+      $scope.people = people;
+  }, function(error) {
+      console.error("There was an error");
+  });</code></pre></div>
+      </section>
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="2-4"><code class="language-javascript">$scope.$createObservableFunction('search')
+  .map(function() {
+      return $scope.name;
+  })
+  .flatMap(function(name) {
+      return rx.Observable.fromPromise(ApiServer.findByName(name));
+  })
+  .filter(function(contact) {
+      return !$scope.sex || ct.sex === $scope.sex;
+  })
+  .subscribe(function(people) {
+      $scope.people = people;
+  }, function(error) {
+      console.error("There was an error");
+  });</code></pre></div>
+      </section>
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="5-8"><code class="language-javascript">$scope.$createObservableFunction('search')
+  .map(function() {
+      return $scope.name;
+  })
+  .flatMap(function(name) {
+      return rx.Observable.fromPromise(ApiServer.findByName(name));
+  })
+  .filter(function(contact) {
+      return !$scope.sex || ct.sex === $scope.sex;
+  })
+  .subscribe(function(people) {
+      $scope.people = people;
+  }, function(error) {
+      console.error("There was an error");
+  });</code></pre></div>
+      </section>
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="9-11"><code class="language-javascript">$scope.$createObservableFunction('search')
+  .map(function() {
+      return $scope.name;
+  })
+  .flatMap(function(name) {
+      return rx.Observable.fromPromise(ApiServer.findByName(name));
+  })
+  .filter(function(contact) {
+      return !$scope.sex || ct.sex === $scope.sex;
+  })
+  .subscribe(function(people) {
+      $scope.people = people;
+  }, function(error) {
+      console.error("There was an error");
+  });</code></pre></div>
+      </section>
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="12-16"><code class="language-javascript">$scope.$createObservableFunction('search')
   .map(function() {
       return $scope.name;
   })
@@ -760,7 +871,7 @@ angular.module('counter').controller('MainCtrl',
 
       <section>
         <div class="content">
-          <h2>Let's reactive everything!</h2>
+          <h2>Let's react to everything!</h2>
         </div>
       </section>
 
