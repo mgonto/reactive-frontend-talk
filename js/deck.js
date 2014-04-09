@@ -4,6 +4,21 @@
 
   var i, image, j, matches, rules, sheet;
 
+    $(document).keydown(function(e){
+        console.log(e.keyCode);
+        if (e.keyCode == 33) { 
+           bespoke.prev();
+           return false;
+        }
+    });
+
+    $(document).keydown(function(e){
+        if (e.keyCode == 34) { 
+           bespoke.next();
+           return false;
+        }
+    });
+
   // Horizontal business as usual
   bespoke.horizontal.from('article', {
     state: true,

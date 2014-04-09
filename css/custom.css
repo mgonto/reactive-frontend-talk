@@ -36,7 +36,7 @@ pre[class*="language-"] {
 
 .long :not(pre) > code[class*="language-"], 
 .long pre[class*="language-"] {
-  width: 900px;
+  width: 960px;
 }
 
 .line-highlight {
@@ -76,6 +76,13 @@ article.steamclock::before {
   background-image: url("../img/steamclock.jpg");
 }
 
+article.beta::before {
+  -webkit-filter: blur(5.5px) grayscale(0.3) brightness(0.4);
+  -moz-filter: blur(5.5px) grayscale(0.3) brightness(0.4);
+  filter: blur(5.5px) grayscale(0.3) brightness(0.4);
+  background-image: url("../img/beta.jpg");
+}
+
 article.js::before {
   -webkit-filter: blur(2.25px) grayscale(0.3) brightness(0.4);
   -moz-filter: blur(2.25px) grayscale(0.3) brightness(0.4);
@@ -83,13 +90,46 @@ article.js::before {
   background-image: url("../img/js.png");
 }
 
-article.longtimeago::before {
-  -webkit-filter: grayscale(0) brightness(1);
-  -moz-filter: grayscale(0) brightness(1);
-  filter: grayscale(0) brightness(1);
-  background-image: url("../img/longtimeago.png");
-  background-position: top;
+article.love::before {
+  -webkit-filter: none;
+  -moz-filter: none;
+  filter: none;
+  background-image: url("../img/love.gif");
 }
+
+article.rewind::before {
+  -webkit-filter: none;
+  -moz-filter: none;
+  filter: none;
+  background-image: url("../img/rewind.gif");
+}
+
+article.really::before {
+  -webkit-filter: none;
+  -moz-filter: none;
+  filter: none;
+  background-image: url("../img/really.gif");
+}
+
+article.rabid::before {
+  -webkit-filter: none;
+  -moz-filter: none;
+  filter: none;
+  background-image: url("../img/rabid.gif");
+}
+
+article.omg::before {
+  -webkit-filter: none;
+  -moz-filter: none;
+  filter: none;
+  background-image: url("../img/omg.gif");
+}
+
+article section span.green {
+  font-color: #00CC00;
+}
+
+
 
 article.proud::before {
   -webkit-filter: grayscale(0) brightness(1);
@@ -99,69 +139,11 @@ article.proud::before {
   background-position: top;
 }
 
-article.kungfu::before {
-  -webkit-filter: grayscale(0) brightness(1);
-  -moz-filter: grayscale(0) brightness(1);
-  filter: grayscale(0) brightness(1);
-  background-image: url("../img/kungfu.gif");
-  background-position: 50% 50%;
-}
-
-article.cd::before {
-  -webkit-filter: none;
-  -moz-filter: none;
-  filter: none;
-  background-image: url("../img/classdiagram.png");
-  background-size: contain;
-}
-
-article.cdbroken::before {
-  -webkit-filter: none;
-  -moz-filter: none;
-  filter: none;
-  background-image: url("../img/cdbroken.png");
-  background-size: contain;
-}
-
-article.cd, article.cdbroken {
-  background-color: white;
-  opacity: 0.95;
-}
-
-article.facepalm::before {
-  -webkit-filter: none;
-  -moz-filter: none;
-  filter: none;
-  background-image: url("../img/facepalm.gif");
-}
-
-article.spoiler::before {
-  -webkit-filter: none;
-  -moz-filter: none;
-  filter: none;
-  background-image: url("../img/spoiler.gif");
-}
-
-article.bond::before {
-  -webkit-filter: none;
-  -moz-filter: none;
-  filter: none;
-  background-image: url("../img/bond.gif");
-}
-
-
 article.notcool::before {
   -webkit-filter: blur(1px) grayscale(0.3) brightness(0.1);
   -moz-filter: blur(1px) grayscale(0.3) brightness(0.1);
   filter: blur(1px) grayscale(0.3) brightness(0.1);
   background-image: url("../img/notcool.jpg");
-}
-
-article.bat-signal::before {
-  -webkit-filter: blur(1px) grayscale(0.3) brightness(0.4);
-  -moz-filter: blur(1px) grayscale(0.3) brightness(0.4);
-  filter: blur(1px) grayscale(0.3) brightness(0.4);
-  background-image: url("../img/Bat-Signal.jpg");
 }
 
 article.notcool-joey::before {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Models and Rest APIs on AngularJS with Restangular</title>
+        <title>Reactive Angular</title>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/prism.css">
         <link rel="stylesheet" href="css/custom.css">
@@ -11,7 +11,7 @@
       <section data-bespoke-state="start">
         <div class="content">
           <div class="unbrokenline"></div>
-          <h1>Models and Rest APIs on AngularJS with Restangular</h1>
+          <h1>Reactive Angular</h1>
           <div class="byline">
             <div class="classy">
               by Martin Gontovnikas
@@ -80,12 +80,15 @@
               this talk is about
             </div>
           </div>
-          <h3>Models & REST APIs</h3>
+          <h3>Reactive Angular</h3>
           <div class="byline">
-            <div class="classy">
-              with Restangular
-            </div>
           </div>
+        </div>
+      </section>
+
+      <section data-bespoke-state="beta">
+        <div class="content">
+          <h2>This talk is still in BETA</h2>
         </div>
       </section>
 
@@ -95,39 +98,54 @@
         </div>
       </section>
       
-      <section data-bespoke-state="longtimeago">
-        <div class="content">
-        </div>
-      </section>
-
       <section>
         <div class="content">
-          <h2>I decided to learn Angular</h2>
-        </div>
-      </section>
-
-      <section>
-        <div class="content">
-          <h2>So I followed some of the cool tutorials that existed</h2>
-        </div>
-      </section>
-
-
-      <section data-bespoke-state="livecode">
-        <div class="content">
-          <div data-angular-app="helloWorld">
-            <span>Enter your name</span>
-            <input type="text" ng-model="person" value="" />
-            <p class="hello">Hello <span class="result">{{person}}</span></p>
+          <div class="byline">
+            <div class="classy">
+              In recent times, I've been working with
+            </div>
           </div>
-          <pre><code class="language-markup">&lt;input type=&quot;text&quot; ng-model=&quot;person&quot; value=&quot;&quot; /&gt;
-&lt;span&gt;Hello &#123;&#123;person&#125;&#125; &lt;/span&gt;</code></pre>
-          
+          <h3>Scala</h3>
+          <div class="byline">
+            <div class="classy">
+              And learnt about
+            </div>
+          </div>
+          <h3>Reactive Programming</h3>
+          <div class="byline"></div>
         </div>
       </section>
 
-      <section data-bespoke-state="proud">
+      <section data-bespoke-state="love">
         <div class="content">
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <h2>Can this be applied to FrontEnd technologies?</h2>
+        </div>
+      </section>
+
+      <section data-bespoke-state="rewind">
+        <div class="content">
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <h2>What is Reactive Programming?</h2>
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <blockquote class="classy">
+            <span class="twitter fedemoli"></p><h4>"I think Reactive means something that take decisions accordingly to certain outcomes"</h4>
+          </blockquote>
+          <blockquote class="classy">
+            <span class="twitter nico"></p><h4>"Attribute of systems that react to events."</h4>
+          </blockquote>
         </div>
       </section>
 
@@ -135,689 +153,575 @@
         <div class="content">
           <div class="byline">
             <div class="classy">
-              so I told my boss
+              the dictionary says
             </div>
           </div>
-          <h3>I know AngularJS</h3>
+          <h3>readily responsive to a stimulus</h3>
+          <div class="unbrokenline"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <h3>1. React To events</h3>
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <h3>2. React To load</h3>
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <h3>3. React To failure</h3>
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <h3>4. React To users</h3>
+        </div>
+      </section>
+
+      <section data-bespoke-state="really">
+        <div class="content nofade">
+          <h3>None of this things are new</h3>
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <h3>So what's the cool stuff?</h3>
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <h3><strong>It leverages <span class="green">Functional Programming</span></strong> to do some of the things we normally do in an easier way.</h3>
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <h3>How do we React to Events usually in out JS code?</h3>
+        </div>
+      </section>
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="1" ><code class="language-javascript">var counter = 0;
+$('.counter-btn').click(function(e) {
+  e.preventDefault();
+  apiServer.getCounterAmount(new Date(), function ok(amount) {
+    counter = counter + amount;
+    apiServer.logCounter(counter, function ok() {
+      $('.text').val('Counter logged OK. ' + counter);
+    })
+  });
+});
+</code></pre>
+        <p>We have a "global" variable</p>
+        </div>
+      </section>
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="2"><code class="language-javascript">var counter = 0;
+$('.counter-btn').click(function(e) {
+  e.preventDefault();
+  apiServer.getCounterAmount(new Date(), function ok(amount) {
+    counter = counter + amount;
+    apiServer.logCounter(counter, function ok() {
+      $('.text').val('Counter logged OK. ' + counter);
+    })
+  });
+});
+</code></pre>
+        <p>The function returns nothing: It has a side effect</p>
+        </div>
+      </section>
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="2, 4, 6-7"><code class="language-javascript">var counter = 0;
+$('.counter-btn').click(function(e) {
+  e.preventDefault();
+  apiServer.getCounterAmount(new Date(), function ok(amount) {
+    counter = counter + amount;
+    apiServer.logCounter(counter, function ok() {
+      $('.text').val('Counter logged OK. ' + counter);
+    });
+  });
+});
+</code></pre>
+        <p>Callback hell</p>
+        </div>
+      </section>
+
+      <section data-bespoke-state="notcool">
+        <div class="content nofade">
+          <div class="unbrokenline"></div>
+          <h2>We're not handling errors</h2>
           <div class="byline">
+            <div class="classy">
+              and if we would
+            </div>
           </div>
+          <h2>We'd need to handle them separately</h2>
+          <div class="unbrokenline"></div>
         </div>
-      </section>
+      </section>  
 
-      <section data-bespoke-state="kungfu">
-        <div class="content">
-        </div>
-      </section>
-      
-      <section data-bespoke-state="cd">
-        <div class="content">
-
-        </div>
-      </section>
-      
-      <section>
-        <div class="content">
-          <h2>AngularJS has $resource for this</h2>
-        </div>
-      </section>
-      
-      <section>
-        <div class="content">
-          <h2>Let's use it</h2>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="code">
-        <div class="content">
-          <p>Let's fetch an user</p>
-          <pre><code class="language-javascript">var User = $resource('/api/v1/user/:userId', {userId:'@id'});
-var user = User.get({userId:123}, function() {
-  user.name = 'Gonto';
-  user.$save();
-});</code></pre>
-          
-          <p>Let's now fetch his Cars</p>
-          <pre><code class="language-javascript">var Car = $resource('/api/v1/user/:userId/cars/:carId',
- {userId:123, carId:'@id'});
- 
- var cars = Car.query(function() {
-   var firstCar = cars[0];
-   firstCar.name = "Honda Fit";
-   firstCar.$save();
- });</code></pre>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="code">
-        <div class="content nofade">
-          <p>Let's fetch an user</p>
-          <pre data-line="1"><code class="language-javascript">var User = $resource('/api/v1/user/:userId', {userId:'@id'});
-var user = User.get({userId:123}, function() {
-  user.name = 'Gonto';
-  user.$save();
-});</code></pre>
-          
-          <p>Let's now fetch his Cars</p>
-          <pre><code class="language-javascript">var Car = $resource('/api/v1/user/:userId/cars/:carId',
- {userId:123, carId:'@id'});
- 
- var cars = Car.query(function() {
-   var firstCar = cars[0];
-   firstCar.name = "Honda Fit";
-   firstCar.$save();
- });</code></pre>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="code">
-        <div class="content nofade">
-          <p>Let's fetch an user</p>
-          <pre  data-line="2-4"><code class="language-javascript">var User = $resource('/api/v1/user/:userId', {userId:'@id'});
-var user = User.get({userId:123}, function() {
-  user.name = 'Gonto';
-  user.$save();
-});</code></pre>
-          
-          <p>Let's now fetch his Cars</p>
-          <pre><code class="language-javascript">var Car = $resource('/api/v1/user/:userId/cars/:carId',
- {userId:123, carId:'@id'});
- 
- var cars = Car.query(function() {
-   var firstCar = cars[0];
-   firstCar.name = "Honda Fit";
-   firstCar.$save();
- });</code></pre>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="code">
-        <div class="content nofade">
-          <p>Let's fetch an user</p>
-          <pre><code class="language-javascript">var User = $resource('/api/v1/user/:userId', {userId:'@id'});
-var user = User.get({userId:123}, function() {
-  user.name = 'Gonto';
-  user.$save();
-});</code></pre>
-          
-          <p>Let's now fetch his Cars</p>
-          <pre data-line="1-2"><code class="language-javascript">var Car = $resource('/api/v1/user/:userId/cars/:carId',
- {userId:123, carId:'@id'});
- 
- var cars = Car.query(function() {
-   var firstCar = cars[0];
-   firstCar.name = "Honda Fit";
-   firstCar.$save();
- });</code></pre>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="code">
-        <div class="content nofade">
-          <p>Let's fetch an user</p>
-          <pre><code class="language-javascript">var User = $resource('/api/v1/user/:userId', {userId:'@id'});
-var user = User.get({userId:123}, function() {
-  user.name = 'Gonto';
-  user.$save();
-});</code></pre>
-          
-          <p>Let's now fetch his Cars</p>
-          <pre data-line="4-8"><code class="language-javascript">var Car = $resource('/api/v1/user/:userId/cars/:carId',
- {userId:123, carId:'@id'});
- 
- var cars = Car.query(function() {
-   var firstCar = cars[0];
-   firstCar.name = "Honda Fit";
-   firstCar.$save();
- });</code></pre>
-        </div>
-      </section>
-      
       <section data-bespoke-state="notcool">
         <div class="content">
-          <h2>$resource thinks models aren't related</h2>
+          <h2>We can't compose this callbacks easily</h2>
         </div>
-      </section>
-      
-      <section data-bespoke-state="notcool">
-        <div class="content">
-          <h2>It doesn't handle nested RESTFul Resources</h2>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="notcool">
-        <div class="content">
-          <h2>We can't add configurations per resource agroupation</h2>
-        </div>
-      </section>
+      </section>          
 
-      <section data-bespoke-state="notcool-joey">
+       <section data-bespoke-state="notcool">
+        <div class="content">
+          <h2>There's no separation of concerns.</h2>
+        </div>
+      </section>              
+
+      <section data-bespoke-state="rabid">
         <div class="content">
         </div>
-      </section>
+      </section>      
 
       <section>
         <div class="content">
-          <h2 class="black-text">This is what I needed</h2>
-          <img src="img/classdiagram.png" />
-        <!--
-        [User]<>-*>[Car]
-        [Car]<>-*>[Mechanic]
-        [Mechanic]<>-*>[Providers]
-        [User]<>-*>[Profile]
-        [Profile]<>-*>[Role]
-        [Mechanic]<>-1>[Boss]
-        [User|+name;+age;+phone]
-        [Car|+make;+model;+year;+maxFuel;+currentFuel;]
-        -->
+          <h2>Let's see the Reactive way of doing this</h2>
+        </div>
+      </section>    
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="1"><code class="language-javascript">$('.counter-btn).clicks()
+.flatMap(function() {
+  return Observable.fromPromise(apiServer.getCounterAmount(new Date()) 
+}
+.doOnEach(apiServer.logCounter)
+.sum()
+.subscribe(function(sum) {
+  console.log("Count now is" , sum)
+}, function error(e) {
+  console.error("Error running this", e);
+});
+</code></pre>
+        <p>We get the clicks stream</p>
+        </div>
+      </section>  
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="2-4"><code class="language-javascript">$('.counter-btn).clicks()
+.flatMap(function() {
+  return Observable.fromPromise(apiServer.getCounterAmount(new Date()) 
+}
+.doOnEach(apiServer.logCounter)
+.sum()
+.subscribe(function(sum) {
+  console.log("Count now is" , sum)
+}, function error(e) {
+  console.error("Error running this", e);
+});
+</code></pre>
+        <p>For each new value we get the amount to sum</p>
+        </div>
+      </section>  
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="5"><code class="language-javascript">$('.counter-btn).clicks()
+.flatMap(function() {
+  return Observable.fromPromise(apiServer.getCounterAmount(new Date()) 
+}
+.doOnEach(apiServer.logCounter)
+.sum()
+.subscribe(function(sum) {
+  console.log("Count now is" , sum)
+}, function error(e) {
+  console.error("Error running this", e);
+});
+</code></pre>
+  <p>As a Side Effect, we log each of them</p>
+        </div>
+      </section> 
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="6"><code class="language-javascript">$('.counter-btn).clicks()
+.flatMap(function() {
+  return Observable.fromPromise(apiServer.getCounterAmount(new Date()) 
+}
+.doOnEach(apiServer.logCounter)
+.sum()
+.subscribe(function(sum) {
+  console.log("Count now is" , sum)
+}, function error(e) {
+  console.error("Error running this", e);
+});
+</code></pre>
+        <p>We sum each new value</p>
+        </div>
+      </section> 
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="7-11"><code class="language-javascript">$('.counter-btn).clicks()
+.flatMap(function() {
+  return Observable.fromPromise(apiServer.getCounterAmount(new Date()) 
+}
+.doOnEach(apiServer.logCounter)
+.sum()
+.subscribe(function(sum) {
+  console.log("Count now is" , sum)
+}, function error(e) {
+  console.error("Error running this", e);
+});
+</code></pre>
+        <p>We subscribe to listen to changes and handle ALL errors</p>
         </div>
       </section>
 
-      <section>
+      <section data-bespoke-state="omg">
         <div class="content">
-          <h2 class="black-text">This is what I got</h2>
-          <img src="img/cdbroken.png" />
         </div>
-      </section>
+      </section> 
 
-      <section data-bespoke-state="facepalm">
-        <div class="content">
-        </div>
-      </section>
-      
-      
-      
-      <section data-bespoke-state="bat-signal">
+      <section data-bespoke-state="">
         <div class="content">
           <div class="unbrokenline"></div>
-          <h2>Restangular-Signal</h2>
-          <div class="byline">
-          <div class="classy">
-            I'm Restangulaaar
-          </div>
-        </div>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="code">
-        <div class="content">
-          <p>First we configure it</p>
-          <pre data-line="1"><code class="language-javascript">RestangularProvider.setBaseUrl('/api/v1')</code></pre>
-          
-          <p>Let's fetch an user</p>
-          <pre><code class="language-javascript">Restangular.one('user', 123).get().then(function(user) {
-  $scope.user = user;
-  user.name = 'Gonto';
-  user.put();
-});</code></pre>
-          
-          <p>Let's now fetch his Cars</p>
-          <pre><code class="language-javascript">$scope.user.getList('cars').then(function(cars) {
-  var firstCar = cars[0];
-  firstCar.name = "Honda Fit";
-  firstCar.put();
-  cars.post({name: 'New Model Extra Cool'});
-});</code></pre>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="code">
-        <div class="content nofade">
-          <p>First we configure it</p>
-          <pre><code class="language-javascript">RestangularProvider.setBaseUrl('/api/v1')</code></pre>
-          
-          <p>Let's fetch an user</p>
-          <pre data-line="1"><code class="language-javascript">Restangular.one('user', 123).get().then(function(user) {
-  $scope.user = user;
-  user.name = 'Gonto';
-  user.put();
-});</code></pre>
-          
-          <p>Let's now fetch his Cars</p>
-          <pre><code class="language-javascript">$scope.user.getList('cars').then(function(cars) {
-  var firstCar = cars[0];
-  firstCar.name = "Honda Fit";
-  firstCar.put();
-  cars.post({name: 'New Model Extra Cool'});
-});</code></pre>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="code">
-        <div class="content nofade">
-          <p>First we configure it</p>
-          <pre><code class="language-javascript">RestangularProvider.setBaseUrl('/api/v1')</code></pre>
-          
-          <p>Let's fetch an user</p>
-          <pre data-line="2-4"><code class="language-javascript">Restangular.one('user', 123).get().then(function(user) {
-  $scope.user = user;
-  user.name = 'Gonto';
-  user.put();
-});</code></pre>
-          
-          <p>Let's now fetch his Cars</p>
-          <pre><code class="language-javascript">$scope.user.getList('cars').then(function(cars) {
-  var firstCar = cars[0];
-  firstCar.name = "Honda Fit";
-  firstCar.put();
-  cars.post({name: 'New Model Extra Cool'});
-});</code></pre>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="code">
-        <div class="content nofade">
-          <p>First we configure it</p>
-          <pre><code class="language-javascript">RestangularProvider.setBaseUrl('/api/v1')</code></pre>
-          
-          <p>Let's fetch an user</p>
-          <pre><code class="language-javascript">Restangular.one('user', 123).get().then(function(user) {
-  $scope.user = user;
-  user.name = 'Gonto';
-  user.put();
-});</code></pre>
-          
-          <p>Let's now fetch his Cars</p>
-          <pre data-line="1"><code class="language-javascript">$scope.user.getList('cars').then(function(cars) {
-  var firstCar = cars[0];
-  firstCar.name = "Honda Fit";
-  firstCar.put();
-  cars.post({name: 'New Model Extra Cool'});
-});</code></pre>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="code">
-        <div class="content nofade">
-          <p>First we configure it</p>
-          <pre><code class="language-javascript">RestangularProvider.setBaseUrl('/api/v1')</code></pre>
-          
-          <p>Let's fetch an user</p>
-          <pre><code class="language-javascript">Restangular.one('user', 123).get().then(function(user) {
-  $scope.user = user;
-  user.name = 'Gonto';
-  user.put();
-});</code></pre>
-          
-          <p>Let's now fetch his Cars</p>
-          <pre data-line="2-4"><code class="language-javascript">$scope.user.getList('cars').then(function(cars) {
-  var firstCar = cars[0];
-  firstCar.name = "Honda Fit";
-  firstCar.put();  
-  cars.post({name: 'New Model Extra Cool'});
-});</code></pre>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="code">
-        <div class="content nofade">
-          <p>First we configure it</p>
-          <pre><code class="language-javascript">RestangularProvider.setBaseUrl('/api/v1')</code></pre>
-          
-          <p>Let's fetch an user</p>
-          <pre><code class="language-javascript">Restangular.one('user', 123).get().then(function(user) {
-  $scope.user = user;
-  user.name = 'Gonto';
-  user.put();
-});</code></pre>
-          
-          <p>Let's now fetch his Cars</p>
-          <pre data-line="5"><code class="language-javascript">$scope.user.getList('cars').then(function(cars) {
-  var firstCar = cars[0];
-  firstCar.name = "Honda Fit";
-  firstCar.put();  
-  cars.post({name: 'New Model Extra Cool'});
-});</code></pre>
-        </div>
-      </section>
-      
-      <section>
-        <div class="content">
-          <h2>You can navigate your hierarchies using all and one</h2>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="code long">
-        <div class="content">
-          <pre><code class="language-javascript">Restangular.all('users').one('car', 123).get();
-Restangular.allUrl('users', 'http://example.com/users').all('messages').getList();
-Restangular.one('users', 123).all('cars').getList();
-$scope.user.all('cars').getList();</code></pre>
-        </div>
-      </section>
-
-      <section>
-        <div class="content">
+          <h2>clicks Observable</h2>
           <div class="byline">
             <div class="classy">
-              Now, we have all of our
+              is very similar to a 
             </div>
           </div>
-          <h3>Models</h3>
+          <h2>Stream</h2>
           <div class="byline">
             <div class="classy">
-              and their
+              which is an
             </div>
           </div>
-          <h3>Data</h3>
+          <h2>infinite list</h2>
           <div class="byline">
             <div class="classy">
-              but what about
+              where
             </div>
           </div>
-          <h3>Adding behaviour?</h3>
-          <div class="byline" />
+          <h2>new values keep on arriving</h2>
+          <div class="unbrokenline"></div>
+        </div>
+      </section> 
+
+      <section data-bespoke-state="">
+        <div class="content">
+          <div class="byline">
+            <div class="classy">we're</div>
+          </div>
+          <h2>transforming, merging, filtering each value</h2>
+          <div class="byline">
+            <div class="classy">that arrives on</div>
+          </div>
+          <h2>the observable</h2>
+          <div class="unbrokenline"></div>
+        </div>
+      </section> 
+
+      <section>
+        <div class="content">
+          <h2>We're handling errors in just ONE place</h2>
+        </div>
+      </section> 
+
+      <section>
+        <div class="content">
+          <h2>We're composing handlers</h2>
+        </div>
+      </section> 
+
+      <section>
+        <div class="content">
+          <h2>We eliminated the callback hell</h2>
+        </div>
+      </section> 
+
+      <section data-bespoke-state="the-end">
+        <div class="content">
+        </div>
+      </section> 
+
+      <section data-bespoke-state="">
+        <div class="content">
+          <h2>How do we apply this to our real world apps?</h2>
+        </div>
+      </section> 
+
+      <section data-bespoke-state="">
+        <div class="content">
+          <h2>Using RxJS: Reactive Extension for Javascript</h2>
+        </div>
+      </section>       
+
+      <section data-bespoke-state="">
+        <div class="content">
+          <h2>In this case, we'll use the Angular Toolkit</h2>
+        </div>
+      </section>
+
+      <section data-bespoke-state="">
+        <div class="content">
+          <h2>Let's implement our counter</h2>
+        </div>
+      </section>
+
+      <section data-bespoke-state="livecode">
+        <div class="content" data-angular-app="counter" ng-controller="MainCtrl">
+          <input type="button" value="Click me to increase counter" ng-click="increaseCounter()" />
+          <span>Current counter value {{counter}}</span>
+        </div>
+      </section>
+
+      <section data-bespoke-state="">
+        <div class="content">
+          <h2>Let's see show it works</h2>
         </div>
       </section>
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
-          <p>I saw tutorials doing:</p>
-          <!-- <div>
-  <input type="button" ng-click="goTo(car, china)" value="click here to use your car"/> 
-  <input type="text" ng-model="amount" placeholder="Fuel to charge" /><input type="button" ng-click="chargeFuel(car, amount)" value="Click here to charge fuel" />
-</div> -->
-          <pre data-line="2, 6"><code class="language-markup">&lt;div&gt;
-  &lt;input type=&quot;button&quot; ng-click=&quot;goTo(car, china)&quot; value=&quot;Go to China&quot;/&gt; 
-  
-  &lt;input type=&quot;text&quot; ng-model=&quot;amount&quot; placeholder=&quot;Fuel to charge&quot; /&gt;
-
-  &lt;input type=&quot;button&quot; ng-click=&quot;chargeFuel(car, amount)&quot; value=&quot;Charge fuel&quot; /&gt;
-&lt;/div&gt;</code></pre>
-        </div>
+          <pre data-line="1-2" ><code class="language-markup">&lt;input type=&quot;button&quot; value=&quot;Click me to increase counter&quot; 
+ng-click=&quot;increaseCounter()&quot; /&gt;
+&lt;span&gt;Current counter value {{counter}}&lt;/span&gt;
+</code></pre></div>
       </section>
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
-          <p>This is what I propose</p>
-          <!-- <div>
-  <input type="button" ng-click="goTo(car, china)" value="click here to use your car"/> 
-  <input type="text" ng-model="amount" placeholder="Fuel to charge" /><input type="button" ng-click="chargeFuel(car, amount)" value="Click here to charge fuel" />
-</div> -->
-          <pre data-line="2, 6"><code class="language-markup">&lt;div&gt;
-  &lt;input type=&quot;button&quot; ng-click=&quot;car.goTo( china)&quot; value=&quot;Go to China&quot;/&gt; 
-  
-  &lt;input type=&quot;text&quot; ng-model=&quot;amount&quot; placeholder=&quot;Fuel to charge&quot; /&gt;
-
-  &lt;input type=&quot;button&quot; ng-click=&quot;car.chargeFuel(amount)&quot; value=&quot;Charge fuel&quot; /&gt;
-&lt;/div&gt;</code></pre>
-        </div>
-      </section>
-
-      <section>
-        <div class="content">
-          <h2>We can easily do that with Restangular</h2>
-        </div>
+          <pre data-line="3" ><code class="language-markup">&lt;input type=&quot;button&quot; value=&quot;Click me to increase counter&quot; 
+ng-click=&quot;increaseCounter()&quot; /&gt;
+&lt;span&gt;Current counter value {{counter}}&lt;/span&gt;
+</code></pre></div>
       </section>
 
       <section data-bespoke-state="code long">
-        <div class="content">
-          <p>The simpler way</p>
-          <pre><code class="language-javascript">Restangular.extendModel('cars', function(car) {
-  car.chargeFuel = function(amount) {
-    car.fuel = car.fuel + 1;
-  }
-
-  // ...
-
-  car.goTo = function(place) {
-    return car.consumeFuel(car.consumptionPerKm * place.distance);
-  }
-
-  return car;
-});</code></pre>
-        </div>
-      </section>
-
-      <section data-bespoke-state="code long">
-        <div class="content">
-          <p>Working with Prototypes</p>
-          <pre><code class="language-javascript">Restangular.extendModel('cars', function(car) {
-  return Car.extend(car);
-});</code></pre>
-          <pre><code class="language-javascript">module.factory('Car', function(Extender) {
-  function Car() {
-
-  }
-
-  Car.prototype.chargeFuel = function(amount) {
-    this.fuel = this.fuel + amount;
-  }
-
-  Car.extend = Extender.for(Car);
-
-  return Car;
-  });</code></pre>
-        </div>
-      </section>
-
-      <section data-bespoke-state="code long">
-        <div class="content">
-          <p>Extender</p>
-          <pre><code class="language-javascript">module.service('Extender', function() {
-
-  this.extendResult = function(result, clazz, /* constructor args*/) {
-
-    var callArgs = arguments;
-    var constructorArgs = Array.prototype.slice.call(callArgs, 2);
-    constructor.apply(val, params);
-
-    var Temp = function(){};
-
-    Temp.prototype = constructor.prototype;
-
-    var inst = new Temp;
-
-    var model = constructor.apply(inst, params);
-
-    angular.extend(model, result);
-    return model;
-  }
-
-  this.processResponse = function(response, constructor) {
-    var __this = this;
-    if (angular.isArray(response)) {
-        var models = [];
-        angular.forEach(response, function(object) {
-            models.push(__this.extendResult(object, constructor));
-        });
-        return angular.extend(response, models);
-    } else {
-        return this.extendResult(jsonResult, constructor);
-    }
-  }
-
-  this.for = function(constructor) {
-    var __this = this;
-    return function(response) {
-      __this.processResponse(response, constructor)
-    };
-  }
-  });</code></pre>
-        </div>
-      </section>
-
-    <section data-bespoke-state="spoiler">
-      <div class="content">
-        
-      </div>
-    </section>
-
-    <section>
-      <div class="content">
-        <div class="byline"></div>
-        <h3>Angular 2.0 is coming</h3>
-        <div class="byline">
-          <div class="classy">
-            so
-          </div>
-        </div>
-        <h3>Restangular 2.0 is coming</h3>
-        <div class="byline"></div>
-      </div>
-    </section>
-
-    <section data-bespoke-state="code long">
-        <div class="content">
-          <p>Restangular 2.0 code</p>
-          <pre><code class="language-javascript">module.factory('Car', function(Extender) {
-  public class Car extend Model {
-    constructor() { 
-      this.currentSpeed = 25;
-    }
-
-    chargeFuel(place){
-        this.fuel = this.fuel + amount;
-    }
-  }
-
-  }
-
-  return Car;
-  });</code></pre>
-  <pre><code class="language-javascript">Restangular.extendModel('cars', Car); //Uses the class</code></pre>
-        </div>
-      </section>
-
-      <section>
-        <div class="content">
-          <div class="byline">
-            <div class="classy">
-              At this point
-            </div>
-          </div>
-          <h3>I was pretty happy</h3>
-          <div class="byline">
-            <div class="classy">
-              BUT
-            </div>
-          </div>
-          <h3>I still had URLs in the FrontEnd</h3>
-        </div>
-      </section>
-
-
-      
-      <section>
-        <div class="content">
-          <h2>What if the element has a link to self?</h2>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="code">
         <div class="content nofade">
-          <p>First we configure it</p>
-          <pre><code class="language-javascript">RestangularProvider.setRestangularFields({
-  selfLink: 'self.href'
-})</code></pre>
-          
-          <p>Let's fetch all users</p>
-          <pre data-line="2-4"><code class="language-javascript">Restangular.all('users').getList().then(function(users) {
-  // user.self.href is equal to 'http://example.com/users/gonto'
-  // This triggers delete to that URL
-  users[0].remove()
-});</code></pre>
-        </div>
-      </section>
-      
-      
-      <section>
-        <div class="content">
-          <h2>Can we configure this further?</h2>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="code">
-        <div class="content">
-          <pre><code class="language-javascript">Restangular.setRestangularFields({
-  id: '_id.$oid'
+          <pre data-line="1"><code class="language-javascript">angular.module('counter', ['rx']);
+
+angular.module('counter').controller('MainCtrl', 
+  function(ApiServer, rx, $scope) {
+      $scope.$createObservableFunction('increaseCounter')
+      .flatMap(function() {
+          return rx.Observable.fromPromise(ApiServer.getCounterAmount(new Date()));
+      })
+      .do(ApiServer.logCounter)
+      .sum()
+      .subscribe(function(counter) {
+          $scope.counter = counter;
+          console.log("Total counter is", counter);
+      }, function(error) {
+          console.error("There was an error");
+      });
 });
+</code></pre></div>
+      </section>
 
-Restangular.setResponseInterceptor(function(data, operation, what) {
-  stopLoading();
-  if (operation == 'getList') {
-    return data[what];
-  }
-  return data;
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="5"><code class="language-javascript">angular.module('counter', ['rx']);
+
+angular.module('counter').controller('MainCtrl', 
+  function(ApiServer, rx, $scope) {
+      $scope.$createObservableFunction('increaseCounter')
+      .flatMap(function() {
+          return rx.Observable.fromPromise(ApiServer.getCounterAmount(new Date()));
+      })
+      .do(ApiServer.logCounter)
+      .sum()
+      .subscribe(function(counter) {
+          $scope.counter = counter;
+          console.log("Total counter is", counter);
+      }, function(error) {
+          console.error("There was an error");
+      });
 });
+</code></pre></div>
+      </section>
 
-Restangular.setRequestInterceptor(function(elem) {
-  startLoading();
-  delete elem.extraInfo;
-  return elem;
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="6-8"><code class="language-javascript">angular.module('counter', ['rx']);
+
+angular.module('counter').controller('MainCtrl', 
+  function(ApiServer, rx, $scope) {
+      $scope.$createObservableFunction('increaseCounter')
+      .flatMap(function() {
+          return rx.Observable.fromPromise(ApiServer.getCounterAmount(new Date()));
+      })
+      .do(ApiServer.logCounter)
+      .sum()
+      .subscribe(function(counter) {
+          $scope.counter = counter;
+          console.log("Total counter is", counter);
+      }, function(error) {
+          console.error("There was an error");
+      });
 });
+</code></pre></div>
+      </section>
 
-Restangular.setMethodOverriders(['put', 'delete']);
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="9"><code class="language-javascript">angular.module('counter', ['rx']);
 
-Restangular.setRequestSuffix('.json');
+angular.module('counter').controller('MainCtrl', 
+  function(ApiServer, rx, $scope) {
+      $scope.$createObservableFunction('increaseCounter')
+      .flatMap(function() {
+          return rx.Observable.fromPromise(ApiServer.getCounterAmount(new Date()));
+      })
+      .do(ApiServer.logCounter)
+      .sum()
+      .subscribe(function(counter) {
+          $scope.counter = counter;
+          console.log("Total counter is", counter);
+      }, function(error) {
+          console.error("There was an error");
+      });
+});
+</code></pre></div>
+      </section>
 
-Restangular.setErrorInterceptor(function(response) {
-  stopLoading();
-  displayError();
-});</code></pre>
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="10"><code class="language-javascript">angular.module('counter', ['rx']);
+
+angular.module('counter').controller('MainCtrl', 
+  function(ApiServer, rx, $scope) {
+      $scope.$createObservableFunction('increaseCounter')
+      .flatMap(function() {
+          return rx.Observable.fromPromise(ApiServer.getCounterAmount(new Date()));
+      })
+      .do(ApiServer.logCounter)
+      .sum()
+      .subscribe(function(counter) {
+          $scope.counter = counter;
+          console.log("Total counter is", counter);
+      }, function(error) {
+          console.error("There was an error");
+      });
+});
+</code></pre></div>
+      </section>
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="11-16"><code class="language-javascript">angular.module('counter', ['rx']);
+
+angular.module('counter').controller('MainCtrl', 
+  function(ApiServer, rx, $scope) {
+      $scope.$createObservableFunction('increaseCounter')
+      .flatMap(function() {
+          return rx.Observable.fromPromise(ApiServer.getCounterAmount(new Date()));
+      })
+      .do(ApiServer.logCounter)
+      .sum()
+      .subscribe(function(counter) {
+          $scope.counter = counter;
+          console.log("Total counter is", counter);
+      }, function(error) {
+          console.error("There was an error");
+      });
+});
+</code></pre></div>
+      </section>
+
+      <section data-bespoke-state="omg">
+        <div class="content">
         </div>
       </section>
+
+      <section data-bespoke-state="">
+        <div class="content">
+          <h2>Let's now do a more complicates and real life example</h2>
+        </div>
+      </section>
+
+      <section data-bespoke-state="">
+        <div class="content">
+          <h2>Let's do a contact search with local and remote filters</h2>
+        </div>
+      </section>
+
+      <section data-bespoke-state="livecode">
+        <div class="content nofade" data-angular-app="searcher" ng-controller="MainCtrl">
+          <label for="name">Enter the name of the person to search for</label><input type="text" ng-model="name" />
+          <select ng-model="sex">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <input type="button" value="search" ng-click="search()" />
+          <ul>
+            <li ng-repeat="person in people">
+              <span>Name: {{person.name}}</span>
+              <span>Name: {{person.sex}}</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       
       <section data-bespoke-state="code long">
-        <div class="content">
-          <p>Scoped configurations</p>
-          <pre><code class="language-javascript">var BondRestangular = Restangular.withConfig(function(RestangularConfigurer) {
-  RestangularConfigurer.setDefaultHeaders({'X-Auth': 'James Bond'})
-});
-
-BondRestangular.one('place', 12).get();</code></pre>
-        </div>
+        <div class="content nofade">
+          <pre><code class="language-markup">&lt;label for=&quot;name&quot;&gt;Enter the name of the person to search for&lt;/label&gt;
+&lt;input type=&quot;text&quot; ng-model=&quot;name&quot; /&gt;
+&lt;select ng-model=&quot;sex&quot;&gt;
+  &lt;option value=&quot;male&quot;&gt;Male&lt;/option&gt;
+  &lt;option value=&quot;female&quot;&gt;Female&lt;/option&gt;
+&lt;/select&gt;
+&lt;input type=&quot;button&quot; value=&quot;search&quot; ng-click=&quot;search()&quot; /&gt;
+&lt;ul&gt;
+  &lt;li ng-repeat=&quot;person in people&quot;&gt;
+    &lt;span&gt;Name: {{person.name}}&lt;/span&gt;
+    &lt;span&gt;Name: {{person.sex}}&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre></div>
       </section>
 
-      <section data-bespoke-state="bond">
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line=""><code class="language-javascript">$scope.$createObservableFunction('search')
+  .map(function() {
+      return $scope.name;
+  })
+  .flatMap(function(name) {
+      return rx.Observable.fromPromise(ApiServer.findByName(name));
+  })
+  .filter(function(contact) {
+      return !$scope.sex || ct.sex === $scope.sex;
+  })
+  .subscribe(function(people) {
+      $scope.people = people;
+  }, function(error) {
+      console.error("There was an error");
+  });</code></pre></div>
+      </section>
+
+      <section>
         <div class="content">
-          
+          <h2>This is just the begining</h2>
         </div>
       </section>
 
-
-      
       <section>
         <div class="content">
-          <h2>It uses ETags by default. You don't have to worry about this</h2>
+          <h2>Let's reactive everything!</h2>
         </div>
       </section>
-      
-      <section>
-        <div class="content">
-          <h2>It's entirely based on promises</h2>
-        </div>
-      </section>
-      
-      <section>
-        <div class="content">
-          <h2>It supports all HTTP methods including Patch, Trace, etc.</h2>
-        </div>
-      </section>
-      
-      <section>
-        <div class="content">
-          <h2>You can run custom operations on methods</h2>
-        </div>
-      </section>
-      
-      <section>
-        <div class="content">
-          <h2>And more</h2>
-        </div>
-      </section>
-      
-      <section data-bespoke-state="bowling">
-        <div class="content">
-        </div>
-      </section>
-      
-      <section data-bespoke-state="link">
-        <div class="content">
-          <h3>Check it out at</h3>
-          </span><a href="https://github.com/mgonto/restangular">github.com/mgonto/restangular</a>
-        </div>
-      </section>
-      
 
       <section>
         <div class="content">
@@ -841,10 +745,6 @@ BondRestangular.one('place', 12).get();</code></pre>
         </div>
       </section>
       
-      <section data-bespoke-state="the-end">
-        <div class="content"></div>
-      </section>
-
       <section data-bespoke-state="final" class="intro">
         <div class="content">
           <div class="byline">
@@ -879,11 +779,16 @@ BondRestangular.one('place', 12).get();</code></pre>
       })(); 
     </script>
     <script src="js/bespoke.js"></script>
-    <script src="js/deck.js"></script>
     <script src="js/prism.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/deck.js"></script>
+    <script src="js/lodash.js"></script>
+    <script src="js/rx.lite.js"></script>
+    <script src="js/rx.aggregates.js"></script>
     <script src="js/angular.min.js"></script>
+    <script src="js/rx.angular.js"></script>
     <script src="js/app.bootstrap.js"></script>
     <script src="js/app.basic.js"></script>
+    <script src="js/app.searcher.js"></script>
     </body>
 </html>
