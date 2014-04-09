@@ -10,7 +10,12 @@
 .full-width-img {
   width: 100%;
 }
-
+ul {
+  list-style: none;
+}
+li {
+  color: #F60;
+}
 .only-image * {
   margin: 0 !important;
   padding: 0 !important;
@@ -21,13 +26,27 @@ article section.white {
   color: #111;
 }
 
-.livecode input {
+.livecode input[type="text"] {
   background: #142444;
   border: none;
   border-bottom: 2px solid #000000;
-  color: #FFF;
+  color: #F60;
   width: 80px;
+  margin: 0 10px;
 }
+
+/*.livecode input[type="button"] {
+  background: #FFF;
+  border: none;
+  color: #142444;
+  border-radius: 2px;
+  padding: 5px 20px;
+  margin-right: 20px;
+}
+
+.livecode input[type="button"]:hover {
+  background: #DDD;
+}*/
 
 .livecode input:focus {
   outline: none;
