@@ -11,6 +11,11 @@
   width: 100%;
 }
 
+.only-image * {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 article section.white {
   background-color: #FFF;
   color: #111;
