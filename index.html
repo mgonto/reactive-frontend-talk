@@ -595,7 +595,7 @@ angular.module('counter').controller('MainCtrl',
           return rx.Observable.fromPromise(ApiServer.getCounterAmount(new Date()));
       })
       .do(ApiServer.logCounter)
-      .sum()
+      .scan(function(acc, val) {return acc + val;})
       .subscribe(function(counter) {
           $scope.counter = counter;
           console.log("Total counter is", counter);
@@ -617,7 +617,7 @@ angular.module('counter').controller('MainCtrl',
           return rx.Observable.fromPromise(ApiServer.getCounterAmount(new Date()));
       })
       .do(ApiServer.logCounter)
-      .sum()
+      .scan(function(acc, val) {return acc + val;})
       .subscribe(function(counter) {
           $scope.counter = counter;
           console.log("Total counter is", counter);
@@ -639,7 +639,7 @@ angular.module('counter').controller('MainCtrl',
           return rx.Observable.fromPromise(ApiServer.getCounterAmount(new Date()));
       })
       .do(ApiServer.logCounter)
-      .sum()
+      .scan(function(acc, val) {return acc + val;})
       .subscribe(function(counter) {
           $scope.counter = counter;
           console.log("Total counter is", counter);
@@ -661,7 +661,7 @@ angular.module('counter').controller('MainCtrl',
           return rx.Observable.fromPromise(ApiServer.getCounterAmount(new Date()));
       })
       .do(ApiServer.logCounter)
-      .sum()
+      .scan(function(acc, val) {return acc + val;})
       .subscribe(function(counter) {
           $scope.counter = counter;
           console.log("Total counter is", counter);
@@ -683,7 +683,7 @@ angular.module('counter').controller('MainCtrl',
           return rx.Observable.fromPromise(ApiServer.getCounterAmount(new Date()));
       })
       .do(ApiServer.logCounter)
-      .sum()
+      .scan(function(acc, val) {return acc + val;})
       .subscribe(function(counter) {
           $scope.counter = counter;
           console.log("Total counter is", counter);
@@ -705,7 +705,7 @@ angular.module('counter').controller('MainCtrl',
           return rx.Observable.fromPromise(ApiServer.getCounterAmount(new Date()));
       })
       .do(ApiServer.logCounter)
-      .sum()
+      .scan(function(acc, val) {return acc + val;})
       .subscribe(function(counter) {
           $scope.counter = counter;
           console.log("Total counter is", counter);
