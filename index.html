@@ -91,12 +91,6 @@
         </div>
       </section>
 
-      <section data-bespoke-state="beta">
-        <div class="content">
-          <h2>This talk is still in BETA</h2>
-        </div>
-      </section>
-
       <section>
         <div class="content">
           <h2>So Let's start</h3>
@@ -490,6 +484,12 @@ $('.counter-btn').click(function(e) {
 
       <section data-bespoke-state="">
         <div class="content">
+          <h2>We can subscribe an observer to the observable list</h2>
+        </div>
+      </section> 
+
+      <section data-bespoke-state="">
+        <div class="content">
           <div class="byline">
             <div class="classy">we're</div>
           </div>
@@ -736,7 +736,7 @@ angular.module('counter').controller('MainCtrl',
       <section data-bespoke-state="livecode">
         <div class="content nofade" data-angular-app="searcher" ng-controller="MainCtrl">
           <label for="name">Enter the name of the person to search for</label><input type="text" ng-model="name" />
-          <select ng-model="sex">
+          <select ng-model="gender">
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
@@ -744,7 +744,7 @@ angular.module('counter').controller('MainCtrl',
           <ul>
             <li ng-repeat="person in people">
               <span>Name: {{person.name}}</span>
-              <span>Sex: {{person.sex}}</span>
+              <span>Sex: {{person.gender}}</span>
             </li>
           </ul>
         </div>
@@ -763,7 +763,7 @@ angular.module('counter').controller('MainCtrl',
 &lt;ul&gt;
   &lt;li ng-repeat=&quot;person in people&quot;&gt;
     &lt;span&gt;Name: {{person.name}}&lt;/span&gt;
-    &lt;span&gt;Name: {{person.sex}}&lt;/span&gt;
+    &lt;span&gt;Name: {{person.gender}}&lt;/span&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</code></pre></div>
       </section>
@@ -778,7 +778,7 @@ angular.module('counter').controller('MainCtrl',
       return rx.Observable.fromPromise(ApiServer.findByName(name));
   })
   .filter(function(contact) {
-      return !$scope.sex || ct.sex === $scope.sex;
+      return !$scope.gender || ct.gender === $scope.gender;
   })
   .subscribe(function(people) {
       $scope.people = people;
@@ -797,7 +797,7 @@ angular.module('counter').controller('MainCtrl',
       return rx.Observable.fromPromise(ApiServer.findByName(name));
   })
   .filter(function(contact) {
-      return !$scope.sex || ct.sex === $scope.sex;
+      return !$scope.gender || ct.gender === $scope.gender;
   })
   .subscribe(function(people) {
       $scope.people = people;
@@ -816,7 +816,7 @@ angular.module('counter').controller('MainCtrl',
       return rx.Observable.fromPromise(ApiServer.findByName(name));
   })
   .filter(function(contact) {
-      return !$scope.sex || ct.sex === $scope.sex;
+      return !$scope.gender || ct.gender === $scope.gender;
   })
   .subscribe(function(people) {
       $scope.people = people;
@@ -835,7 +835,7 @@ angular.module('counter').controller('MainCtrl',
       return rx.Observable.fromPromise(ApiServer.findByName(name));
   })
   .filter(function(contact) {
-      return !$scope.sex || ct.sex === $scope.sex;
+      return !$scope.gender || ct.gender === $scope.gender;
   })
   .subscribe(function(people) {
       $scope.people = people;
@@ -854,7 +854,7 @@ angular.module('counter').controller('MainCtrl',
       return rx.Observable.fromPromise(ApiServer.findByName(name));
   })
   .filter(function(contact) {
-      return !$scope.sex || ct.sex === $scope.sex;
+      return !$scope.gender || ct.gender === $scope.gender;
   })
   .subscribe(function(people) {
       $scope.people = people;
@@ -863,6 +863,109 @@ angular.module('counter').controller('MainCtrl',
   });</code></pre></div>
       </section>
 
+      <section>
+        <div class="content">
+          <h2>Let's create the Konami Code reactively</h2>
+        </div>
+      </section>
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="1"><code class="language-javascript">$(document).keyupAsObservable()
+.map(function (e) { return e.keyCode; }) 
+.windowWithCount(10, 10)                    
+.selectMany(function (x) {                  
+    return x.sequenceEqual(konami); 
+})
+.filter(function (equal) { return equal; })  
+.subscribe(function () {
+    console.log('KONAMI! at', new Date());   
+});</code></pre></div>
+      </section>
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="2"><code class="language-javascript">$(document).keyupAsObservable()
+.map(function (e) { return e.keyCode; }) 
+.windowWithCount(10, 10)                    
+.selectMany(function (x) {                  
+    return x.sequenceEqual(konami); 
+})
+.filter(function (equal) { return equal; })  
+.subscribe(function () {
+    console.log('KONAMI! at', new Date());   
+});</code></pre></div>
+      </section>
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="3"><code class="language-javascript">$(document).keyupAsObservable()
+.map(function (e) { return e.keyCode; }) 
+.windowWithCount(10, 10)                    
+.selectMany(function (x) {                  
+    return x.sequenceEqual(konami); 
+})
+.filter(function (equal) { return equal; })  
+.subscribe(function () {
+    console.log('KONAMI! at', new Date());   
+});</code></pre></div>
+      </section>
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="4-6"><code class="language-javascript">$(document).keyupAsObservable()
+.map(function (e) { return e.keyCode; }) 
+.windowWithCount(10, 10)                    
+.selectMany(function (x) {                  
+    return x.sequenceEqual(konami); 
+})
+.filter(function (equal) { return equal; })  
+.subscribe(function () {
+    console.log('KONAMI! at', new Date());   
+});</code></pre></div>
+      </section>
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="7"><code class="language-javascript">$(document).keyupAsObservable()
+.map(function (e) { return e.keyCode; }) 
+.windowWithCount(10, 10)                    
+.selectMany(function (x) {                  
+    return x.sequenceEqual(konami); 
+})
+.filter(function (equal) { return equal; })  
+.subscribe(function () {
+    console.log('KONAMI! at', new Date());   
+});</code></pre></div>
+      </section>
+
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="8-10"><code class="language-javascript">$(document).keyupAsObservable()
+.map(function (e) { return e.keyCode; }) 
+.windowWithCount(10, 10)                    
+.selectMany(function (x) {                  
+    return x.sequenceEqual(konami); 
+})
+.filter(function (equal) { return equal; })  
+.subscribe(function () {
+    console.log('KONAMI! at', new Date());   
+});</code></pre></div>
+      </section>
+
+      <section>
+        <div class="content">
+          <h2>RxJS is just an example</h2>
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <h2>Lots of companies are starting to use this</h2>
+        </div>
+      </section>
+
+      
       <section>
         <div class="content">
           <h2>This is just the begining</h2>
