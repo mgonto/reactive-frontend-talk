@@ -3,13 +3,13 @@ angular.module('searcher', ['rx']);
 angular.module('searcher').service('ApiServer', function($q) {
     var contacts = [{
         name: "Martin Gonto",
-        sex: 'male'
+        gender: 'male'
     }, {
         name: "John Doe",
-        sex: 'male'
+        gender: 'male'
     }, {
         name: "Michelle Gonto",
-        sex: 'female'
+        gender: 'female'
     }];
 
     this.findByName = function(name) {
@@ -35,7 +35,7 @@ angular.module('searcher').controller('MainCtrl',
         })
         .map(function(contacts) {
             return _.filter(contacts, function(ct) {
-                return !$scope.sex || ct.sex === $scope.sex;
+                return !$scope.gender || ct.gender === $scope.gender;
             });
         })
         .subscribe(function(people) {
