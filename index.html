@@ -873,8 +873,8 @@ angular.module('counter').controller('MainCtrl',
         <div class="content nofade">
           <pre data-line="1"><code class="language-javascript">$(document).keyupAsObservable()
 .map(function (e) { return e.keyCode; }) 
-.windowWithCount(10, 10)                    
-.selectMany(function (x) {                  
+.windowWithCount(10, 1)                    
+.flatMap(function (x) {                  
     return x.sequenceEqual(konami); 
 })
 .filter(function (equal) { return equal; })  
@@ -887,8 +887,8 @@ angular.module('counter').controller('MainCtrl',
         <div class="content nofade">
           <pre data-line="2"><code class="language-javascript">$(document).keyupAsObservable()
 .map(function (e) { return e.keyCode; }) 
-.windowWithCount(10, 10)                    
-.selectMany(function (x) {                  
+.windowWithCount(10, 1)                    
+.flatMap(function (x) {                  
     return x.sequenceEqual(konami); 
 })
 .filter(function (equal) { return equal; })  
@@ -901,13 +901,13 @@ angular.module('counter').controller('MainCtrl',
         <div class="content nofade">
           <pre data-line="3"><code class="language-javascript">$(document).keyupAsObservable()
 .map(function (e) { return e.keyCode; }) 
-.windowWithCount(10, 10)                    
-.selectMany(function (x) {                  
+.windowWithCount(10, 1)                    
+.flatMap(function (x) {                  
     return x.sequenceEqual(konami); 
 })
 .filter(function (equal) { return equal; })  
 .subscribe(function () {
-    console.log('KONAMI! at', new Date());   
+    console.log('KONAMI! at', new Date());      
 });</code></pre></div>
       </section>
 
@@ -915,8 +915,8 @@ angular.module('counter').controller('MainCtrl',
         <div class="content nofade">
           <pre data-line="4-6"><code class="language-javascript">$(document).keyupAsObservable()
 .map(function (e) { return e.keyCode; }) 
-.windowWithCount(10, 10)                    
-.selectMany(function (x) {                  
+.windowWithCount(10, 1)                    
+.flatMap(function (x) {                  
     return x.sequenceEqual(konami); 
 })
 .filter(function (equal) { return equal; })  
@@ -929,13 +929,13 @@ angular.module('counter').controller('MainCtrl',
         <div class="content nofade">
           <pre data-line="7"><code class="language-javascript">$(document).keyupAsObservable()
 .map(function (e) { return e.keyCode; }) 
-.windowWithCount(10, 10)                    
-.selectMany(function (x) {                  
+.windowWithCount(10, 1)                    
+.flatMap(function (x) {                  
     return x.sequenceEqual(konami); 
 })
 .filter(function (equal) { return equal; })  
 .subscribe(function () {
-    console.log('KONAMI! at', new Date());   
+    console.log('KONAMI! at', new Date());      
 });</code></pre></div>
       </section>
 
@@ -943,8 +943,8 @@ angular.module('counter').controller('MainCtrl',
         <div class="content nofade">
           <pre data-line="8-10"><code class="language-javascript">$(document).keyupAsObservable()
 .map(function (e) { return e.keyCode; }) 
-.windowWithCount(10, 10)                    
-.selectMany(function (x) {                  
+.windowWithCount(10, 1)                    
+.flatMap(function (x) {                  
     return x.sequenceEqual(konami); 
 })
 .filter(function (equal) { return equal; })  
@@ -994,12 +994,6 @@ angular.module('counter').controller('MainCtrl',
         </div>
       </section> 
       
-      <section>
-        <div class="content">
-          <h1>Questions?</h1>
-        </div>
-      </section>
-      
       <section data-bespoke-state="final" class="intro">
         <div class="content">
           <div class="byline">
@@ -1007,7 +1001,7 @@ angular.module('counter').controller('MainCtrl',
               This has been
             </div>
           </div>
-          <h1>Models and Rest APIs on AngularJS with Restangular</h1>
+          <h1>Reactive Angular</h1>
           <div class="byline">
             <div class="classy">
               by Martin Gontovnikas
@@ -1019,6 +1013,20 @@ angular.module('counter').controller('MainCtrl',
             </div>
             <h3>@mgonto</h3>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <h2>Apendix</h2>
+        </div>
+      </section>
+
+      <section>
+        <div class="content">
+          <img src="img/ng-europe-horizontal-on-black.png" />
+          <h4>15% discount with devoxx-2014 code</h4>
+          <h4><a href=" http://goo.gl/wc8Rgo">goo.gl/wc8Rgo</a></h4>
         </div>
       </section>
 
