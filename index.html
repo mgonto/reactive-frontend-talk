@@ -540,6 +540,23 @@ $('.counter-btn').click(function(e) {
         </div>
       </section> 
 
+      <section data-bespoke-state="code long">
+        <div class="content nofade">
+          <pre data-line="9-11"><code class="language-javascript">$('.counter-btn).clicks()
+.flatMap(function() {
+  return Observable.fromPromise(apiServer.getCounterAmount(new Date()) 
+}
+.doOnEach(apiServer.logCounter)
+.sum()
+.subscribe(function(sum) {
+  console.log("Count now is" , sum)
+}, function error(e) {
+  console.error("Error running this", e);
+});
+</code></pre>
+        </div>
+      </section>
+
       <section>
         <div class="content">
           <h2>We're composing handlers</h2>
