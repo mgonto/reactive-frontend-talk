@@ -19,7 +19,7 @@
           </div>
           <div class="profile">
             <div class="rounded-image">
-              <img src="img/gonto.jpeg">
+              <img src="img/gonto.jpg">
             </div>
             <h3>@mgonto</h3>
           </div>
@@ -41,15 +41,15 @@
           </div>
         </div>
       </section>
-      
-      <section data-bespoke-state="steamclock">
+
+      <section data-bespoke-state="auth0">
         <div class="content">
           <div class="byline">
             <div class="classy">
-              currently employed by 
+              working at
             </div>
           </div>
-          <h3>Aquicore Inc.</h3>
+          <h3>Auth0 Inc.</h3>
           <div class="byline">
             <div class="classy">
               making stuff happen
@@ -62,19 +62,35 @@
         <div class="content">
           <div class="byline">
             <div class="classy">
-              doing 
+              used to be coding
             </div>
           </div>
           <h3>Javascript</h3>
           <div class="byline">
             <div class="classy">
-              most of my day <3
+              all day long
             </div>
           </div>
         </div>
       </section>
-      
+
       <section data-bespoke-state="programming">
+        <div class="content"></div>
+      </section>
+
+      <section data-bespoke-state="advocate">
+        <div class="content">
+          <div class="byline">
+            <div class="classy">
+              Now I work as a
+            </div>
+          </div>
+          <h3>Developer Advocate</h3>
+          <div class="unbrokenline"></div>
+        </div>
+      </section>
+
+      <section data-bespoke-state="smoke">
         <div class="content"></div>
       </section>
 
@@ -96,7 +112,7 @@
           <h2>So Let's start</h3>
         </div>
       </section>
-      
+
       <section>
         <div class="content">
           <div class="byline">
@@ -165,21 +181,21 @@
             <h2>We used to have 100 servers</h2>
             <h2>Now we have 1000 servers</h2>
           </div>
-      </section>      
+      </section>
 
       <section>
           <div class="content">
             <h2>We used to have GB of data</h2>
             <h2>Now we have PB of data</h2>
           </div>
-      </section>      
+      </section>
 
       <section>
           <div class="content">
             <h2>We used to have 100s of users</h2>
             <h2>Now we have 10000s of users</h2>
           </div>
-      </section>      
+      </section>
 
 
       <section>
@@ -300,36 +316,36 @@ $('.counter-btn').click(function(e) {
           <h2>We'd need to handle them separately</h2>
           <div class="unbrokenline"></div>
         </div>
-      </section>  
+      </section>
 
       <section data-bespoke-state="notcool">
         <div class="content">
           <h2>We can't compose this callbacks easily</h2>
         </div>
-      </section>          
+      </section>
 
        <section data-bespoke-state="notcool">
         <div class="content">
           <h2>There's no separation of concerns.</h2>
         </div>
-      </section>              
+      </section>
 
       <section data-bespoke-state="rabid">
         <div class="content">
         </div>
-      </section>      
+      </section>
 
       <section>
         <div class="content">
           <h2>Let's see the Reactive way of doing this</h2>
         </div>
-      </section>    
+      </section>
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
           <pre data-line="1"><code class="language-javascript">$('.counter-btn).clicks()
 .flatMap(function() {
-  return Observable.fromPromise(apiServer.getCounterAmount(new Date()) 
+  return Observable.fromPromise(apiServer.getCounterAmount(new Date())
 }
 .doOnEach(apiServer.logCounter)
 .sum()
@@ -341,13 +357,13 @@ $('.counter-btn').click(function(e) {
 </code></pre>
         <p>We get the clicks stream</p>
         </div>
-      </section>  
+      </section>
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
           <pre data-line="2-4"><code class="language-javascript">$('.counter-btn).clicks()
 .flatMap(function() {
-  return Observable.fromPromise(apiServer.getCounterAmount(new Date()) 
+  return Observable.fromPromise(apiServer.getCounterAmount(new Date())
 }
 .doOnEach(apiServer.logCounter)
 .sum()
@@ -359,13 +375,13 @@ $('.counter-btn').click(function(e) {
 </code></pre>
         <p>For each new value we get the amount to sum</p>
         </div>
-      </section>  
+      </section>
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
           <pre data-line="5"><code class="language-javascript">$('.counter-btn).clicks()
 .flatMap(function() {
-  return Observable.fromPromise(apiServer.getCounterAmount(new Date()) 
+  return Observable.fromPromise(apiServer.getCounterAmount(new Date())
 }
 .doOnEach(apiServer.logCounter)
 .sum()
@@ -377,13 +393,13 @@ $('.counter-btn').click(function(e) {
 </code></pre>
   <p>As a Side Effect, we log each of them</p>
         </div>
-      </section> 
+      </section>
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
           <pre data-line="6"><code class="language-javascript">$('.counter-btn).clicks()
 .flatMap(function() {
-  return Observable.fromPromise(apiServer.getCounterAmount(new Date()) 
+  return Observable.fromPromise(apiServer.getCounterAmount(new Date())
 }
 .doOnEach(apiServer.logCounter)
 .sum()
@@ -395,13 +411,13 @@ $('.counter-btn').click(function(e) {
 </code></pre>
         <p>We sum each new value</p>
         </div>
-      </section> 
+      </section>
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
           <pre data-line="7-11"><code class="language-javascript">$('.counter-btn).clicks()
 .flatMap(function() {
-  return Observable.fromPromise(apiServer.getCounterAmount(new Date()) 
+  return Observable.fromPromise(apiServer.getCounterAmount(new Date())
 }
 .doOnEach(apiServer.logCounter)
 .sum()
@@ -418,7 +434,7 @@ $('.counter-btn').click(function(e) {
       <section data-bespoke-state="omg">
         <div class="content">
         </div>
-      </section> 
+      </section>
 
       <section>
         <div class="content">
@@ -462,7 +478,7 @@ $('.counter-btn').click(function(e) {
           <h2>clicks Observable</h2>
           <div class="byline">
             <div class="classy">
-              is very similar to a 
+              is very similar to a
             </div>
           </div>
           <h2>Stream</h2>
@@ -480,13 +496,13 @@ $('.counter-btn').click(function(e) {
           <h2>new values keep on arriving</h2>
           <div class="unbrokenline"></div>
         </div>
-      </section> 
+      </section>
 
       <section data-bespoke-state="">
         <div class="content">
           <h2>We can subscribe an observer to the observable list</h2>
         </div>
-      </section> 
+      </section>
 
       <section data-bespoke-state="">
         <div class="content">
@@ -500,7 +516,7 @@ $('.counter-btn').click(function(e) {
           <h2>the observable</h2>
           <div class="unbrokenline"></div>
         </div>
-      </section> 
+      </section>
 
        <section data-bespoke-state="">
         <div class="content">
@@ -514,7 +530,7 @@ $('.counter-btn').click(function(e) {
           <h2>understand map and flatMap</h2>
           <div class="unbrokenline"></div>
         </div>
-      </section> 
+      </section>
 
       <section class="white only-image">
         <div class="content">
@@ -532,19 +548,19 @@ $('.counter-btn').click(function(e) {
         <div class="content">
           <h2>What are the advantages?</h2>
         </div>
-      </section> 
+      </section>
 
       <section>
         <div class="content">
           <h2>We're handling errors in just ONE place</h2>
         </div>
-      </section> 
+      </section>
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
           <pre data-line="9-11"><code class="language-javascript">$('.counter-btn).clicks()
 .flatMap(function() {
-  return Observable.fromPromise(apiServer.getCounterAmount(new Date()) 
+  return Observable.fromPromise(apiServer.getCounterAmount(new Date())
 }
 .doOnEach(apiServer.logCounter)
 .sum()
@@ -561,30 +577,30 @@ $('.counter-btn').click(function(e) {
         <div class="content">
           <h2>We're composing handlers</h2>
         </div>
-      </section> 
+      </section>
 
       <section>
         <div class="content">
           <h2>We eliminated the callback hell</h2>
         </div>
-      </section> 
+      </section>
 
       <section data-bespoke-state="the-end">
         <div class="content">
         </div>
-      </section> 
+      </section>
 
       <section data-bespoke-state="">
         <div class="content">
           <h2>How do we apply this to our real world apps?</h2>
         </div>
-      </section> 
+      </section>
 
       <section data-bespoke-state="">
         <div class="content">
           <h2>Using RxJS: Reactive Extension for Javascript</h2>
         </div>
-      </section>       
+      </section>
 
       <section data-bespoke-state="">
         <div class="content">
@@ -613,7 +629,7 @@ $('.counter-btn').click(function(e) {
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
-          <pre data-line="1-2" ><code class="language-markup">&lt;input type=&quot;button&quot; value=&quot;Click me to increase counter&quot; 
+          <pre data-line="1-2" ><code class="language-markup">&lt;input type=&quot;button&quot; value=&quot;Click me to increase counter&quot;
 ng-click=&quot;increaseCounter()&quot; /&gt;
 &lt;span&gt;Current counter value {{counter}}&lt;/span&gt;
 </code></pre></div>
@@ -621,7 +637,7 @@ ng-click=&quot;increaseCounter()&quot; /&gt;
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
-          <pre data-line="3" ><code class="language-markup">&lt;input type=&quot;button&quot; value=&quot;Click me to increase counter&quot; 
+          <pre data-line="3" ><code class="language-markup">&lt;input type=&quot;button&quot; value=&quot;Click me to increase counter&quot;
 ng-click=&quot;increaseCounter()&quot; /&gt;
 &lt;span&gt;Current counter value {{counter}}&lt;/span&gt;
 </code></pre></div>
@@ -631,7 +647,7 @@ ng-click=&quot;increaseCounter()&quot; /&gt;
         <div class="content nofade">
           <pre data-line="1"><code class="language-javascript">angular.module('counter', ['rx']);
 
-angular.module('counter').controller('MainCtrl', 
+angular.module('counter').controller('MainCtrl',
   function(ApiServer, rx, $scope) {
       $scope.$createObservableFunction('increaseCounter')
       .flatMap(function() {
@@ -653,7 +669,7 @@ angular.module('counter').controller('MainCtrl',
         <div class="content nofade">
           <pre data-line="5"><code class="language-javascript">angular.module('counter', ['rx']);
 
-angular.module('counter').controller('MainCtrl', 
+angular.module('counter').controller('MainCtrl',
   function(ApiServer, rx, $scope) {
       $scope.$createObservableFunction('increaseCounter')
       .flatMap(function() {
@@ -675,7 +691,7 @@ angular.module('counter').controller('MainCtrl',
         <div class="content nofade">
           <pre data-line="6-8"><code class="language-javascript">angular.module('counter', ['rx']);
 
-angular.module('counter').controller('MainCtrl', 
+angular.module('counter').controller('MainCtrl',
   function(ApiServer, rx, $scope) {
       $scope.$createObservableFunction('increaseCounter')
       .flatMap(function() {
@@ -697,7 +713,7 @@ angular.module('counter').controller('MainCtrl',
         <div class="content nofade">
           <pre data-line="9"><code class="language-javascript">angular.module('counter', ['rx']);
 
-angular.module('counter').controller('MainCtrl', 
+angular.module('counter').controller('MainCtrl',
   function(ApiServer, rx, $scope) {
       $scope.$createObservableFunction('increaseCounter')
       .flatMap(function() {
@@ -719,7 +735,7 @@ angular.module('counter').controller('MainCtrl',
         <div class="content nofade">
           <pre data-line="10"><code class="language-javascript">angular.module('counter', ['rx']);
 
-angular.module('counter').controller('MainCtrl', 
+angular.module('counter').controller('MainCtrl',
   function(ApiServer, rx, $scope) {
       $scope.$createObservableFunction('increaseCounter')
       .flatMap(function() {
@@ -741,7 +757,7 @@ angular.module('counter').controller('MainCtrl',
         <div class="content nofade">
           <pre data-line="11-16"><code class="language-javascript">angular.module('counter', ['rx']);
 
-angular.module('counter').controller('MainCtrl', 
+angular.module('counter').controller('MainCtrl',
   function(ApiServer, rx, $scope) {
       $scope.$createObservableFunction('increaseCounter')
       .flatMap(function() {
@@ -793,12 +809,12 @@ angular.module('counter').controller('MainCtrl',
         </div>
       </section>
 
-      
+
       <section data-bespoke-state="code long">
         <div class="content nofade">
           <pre><code class="language-markup">&lt;label for=&quot;name&quot;&gt;Enter the name of the person to search for&lt;/label&gt;
 &lt;input type=&quot;text&quot; ng-model=&quot;name&quot; /&gt;
-&lt;select ng-model=&quot;sex&quot;&gt;
+&lt;select ng-model=&quot;gender&quot;&gt;
   &lt;option value=&quot;male&quot;&gt;Male&lt;/option&gt;
   &lt;option value=&quot;female&quot;&gt;Female&lt;/option&gt;
 &lt;/select&gt;
@@ -821,7 +837,7 @@ angular.module('counter').controller('MainCtrl',
       return rx.Observable.fromPromise(ApiServer.findByName(name));
   })
   .filter(function(contact) {
-      return !$scope.gender || ct.gender === $scope.gender;
+      return !$scope.gender || contact.gender === $scope.gender;
   })
   .subscribe(function(people) {
       $scope.people = people;
@@ -840,7 +856,7 @@ angular.module('counter').controller('MainCtrl',
       return rx.Observable.fromPromise(ApiServer.findByName(name));
   })
   .filter(function(contact) {
-      return !$scope.gender || ct.gender === $scope.gender;
+      return !$scope.gender || contact.gender === $scope.gender;
   })
   .subscribe(function(people) {
       $scope.people = people;
@@ -859,7 +875,7 @@ angular.module('counter').controller('MainCtrl',
       return rx.Observable.fromPromise(ApiServer.findByName(name));
   })
   .filter(function(contact) {
-      return !$scope.gender || ct.gender === $scope.gender;
+      return !$scope.gender || contact.gender === $scope.gender;
   })
   .subscribe(function(people) {
       $scope.people = people;
@@ -878,7 +894,7 @@ angular.module('counter').controller('MainCtrl',
       return rx.Observable.fromPromise(ApiServer.findByName(name));
   })
   .filter(function(contact) {
-      return !$scope.gender || ct.gender === $scope.gender;
+      return !$scope.gender || contact.gender === $scope.gender;
   })
   .subscribe(function(people) {
       $scope.people = people;
@@ -897,7 +913,7 @@ angular.module('counter').controller('MainCtrl',
       return rx.Observable.fromPromise(ApiServer.findByName(name));
   })
   .filter(function(contact) {
-      return !$scope.gender || ct.gender === $scope.gender;
+      return !$scope.gender || contact.gender === $scope.gender;
   })
   .subscribe(function(people) {
       $scope.people = people;
@@ -915,84 +931,84 @@ angular.module('counter').controller('MainCtrl',
       <section data-bespoke-state="code long">
         <div class="content nofade">
           <pre data-line="1"><code class="language-javascript">$(document).keyupAsObservable()
-.map(function (e) { return e.keyCode; }) 
-.windowWithCount(10, 1)                    
-.flatMap(function (x) {                  
-    return x.sequenceEqual(konami); 
+.map(function (e) { return e.keyCode; })
+.windowWithCount(10, 1)
+.flatMap(function (x) {
+    return x.sequenceEqual(konami);
 })
-.filter(function (equal) { return equal; })  
+.filter(function (equal) { return equal; })
 .subscribe(function () {
-    console.log('KONAMI! at', new Date());   
+    console.log('KONAMI! at', new Date());
 });</code></pre></div>
       </section>
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
           <pre data-line="2"><code class="language-javascript">$(document).keyupAsObservable()
-.map(function (e) { return e.keyCode; }) 
-.windowWithCount(10, 1)                    
-.flatMap(function (x) {                  
-    return x.sequenceEqual(konami); 
+.map(function (e) { return e.keyCode; })
+.windowWithCount(10, 1)
+.flatMap(function (x) {
+    return x.sequenceEqual(konami);
 })
-.filter(function (equal) { return equal; })  
+.filter(function (equal) { return equal; })
 .subscribe(function () {
-    console.log('KONAMI! at', new Date());   
+    console.log('KONAMI! at', new Date());
 });</code></pre></div>
       </section>
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
           <pre data-line="3"><code class="language-javascript">$(document).keyupAsObservable()
-.map(function (e) { return e.keyCode; }) 
-.windowWithCount(10, 1)                    
-.flatMap(function (x) {                  
-    return x.sequenceEqual(konami); 
+.map(function (e) { return e.keyCode; })
+.windowWithCount(10, 1)
+.flatMap(function (x) {
+    return x.sequenceEqual(konami);
 })
-.filter(function (equal) { return equal; })  
+.filter(function (equal) { return equal; })
 .subscribe(function () {
-    console.log('KONAMI! at', new Date());      
+    console.log('KONAMI! at', new Date());
 });</code></pre></div>
       </section>
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
           <pre data-line="4-6"><code class="language-javascript">$(document).keyupAsObservable()
-.map(function (e) { return e.keyCode; }) 
-.windowWithCount(10, 1)                    
-.flatMap(function (x) {                  
-    return x.sequenceEqual(konami); 
+.map(function (e) { return e.keyCode; })
+.windowWithCount(10, 1)
+.flatMap(function (x) {
+    return x.sequenceEqual(konami);
 })
-.filter(function (equal) { return equal; })  
+.filter(function (equal) { return equal; })
 .subscribe(function () {
-    console.log('KONAMI! at', new Date());   
+    console.log('KONAMI! at', new Date());
 });</code></pre></div>
       </section>
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
           <pre data-line="7"><code class="language-javascript">$(document).keyupAsObservable()
-.map(function (e) { return e.keyCode; }) 
-.windowWithCount(10, 1)                    
-.flatMap(function (x) {                  
-    return x.sequenceEqual(konami); 
+.map(function (e) { return e.keyCode; })
+.windowWithCount(10, 1)
+.flatMap(function (x) {
+    return x.sequenceEqual(konami);
 })
-.filter(function (equal) { return equal; })  
+.filter(function (equal) { return equal; })
 .subscribe(function () {
-    console.log('KONAMI! at', new Date());      
+    console.log('KONAMI! at', new Date());
 });</code></pre></div>
       </section>
 
       <section data-bespoke-state="code long">
         <div class="content nofade">
           <pre data-line="8-10"><code class="language-javascript">$(document).keyupAsObservable()
-.map(function (e) { return e.keyCode; }) 
-.windowWithCount(10, 1)                    
-.flatMap(function (x) {                  
-    return x.sequenceEqual(konami); 
+.map(function (e) { return e.keyCode; })
+.windowWithCount(10, 1)
+.flatMap(function (x) {
+    return x.sequenceEqual(konami);
 })
-.filter(function (equal) { return equal; })  
+.filter(function (equal) { return equal; })
 .subscribe(function () {
-    console.log('KONAMI! at', new Date());   
+    console.log('KONAMI! at', new Date());
 });</code></pre></div>
       </section>
 
@@ -1008,7 +1024,7 @@ angular.module('counter').controller('MainCtrl',
         </div>
       </section>
 
-      
+
       <section>
         <div class="content">
           <h2>This is just the begining</h2>
@@ -1035,8 +1051,8 @@ angular.module('counter').controller('MainCtrl',
             </div>
           </div>
         </div>
-      </section> 
-      
+      </section>
+
       <section data-bespoke-state="final" class="intro">
         <div class="content">
           <div class="byline">
@@ -1052,24 +1068,10 @@ angular.module('counter').controller('MainCtrl',
           </div>
           <div class="profile">
             <div class="rounded-image">
-              <img src="img/gonto.jpeg">
+              <img src="img/gonto.jpg">
             </div>
             <h3>@mgonto</h3>
           </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="content">
-          <h2>Apendix</h2>
-        </div>
-      </section>
-
-      <section>
-        <div class="content">
-          <img src="img/ng-europe-horizontal-on-black.png" />
-          <h4>15% discount with devoxx-2014 code</h4>
-          <h4><a href=" http://goo.gl/wc8Rgo">goo.gl/wc8Rgo</a></h4>
         </div>
       </section>
 
@@ -1086,7 +1088,7 @@ angular.module('counter').controller('MainCtrl',
         wf.async = 'true';
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(wf, s);
-      })(); 
+      })();
     </script>
     <script src="js/bespoke.js"></script>
     <script src="js/prism.js"></script>
