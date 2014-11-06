@@ -1,8 +1,8 @@
-## Restangular AngularJS MTV Talk
+## Reactive Frontend talk
 
-This are the slides for the talk I did at AngularJS MTV Meetup.
+Learn what Reactive Programming is and how to use it in Frontend apps.
 
-You can see them at http://mgonto.github.io/restangular-talk
+You can see the talk atat http://mgonto.github.io/reactive-frontend-talk
 
 ## Thanks
 
